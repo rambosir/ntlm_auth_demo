@@ -29,7 +29,7 @@ def requests_auth():
     print(res.content.decode('utf8'))
 
 
-def toIndex():
+def urllib_auth():
     p = req.HTTPPasswordMgrWithDefaultRealm()
     p.add_password(None, uri=common.AUTH_URL, user=(common.INDEX_URL + '\\' + common.USER_NAME),
                    passwd=common.USER_PASS)
@@ -74,4 +74,4 @@ def toIndex():
 
 
 if __name__ == '__main__':
-    toIndex()
+    urllib_auth()
