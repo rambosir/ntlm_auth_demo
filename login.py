@@ -56,11 +56,10 @@ def urllib_auth():
     res = req.urlopen(reqData)
     print(res.read().decode('utf8'))
 
-    # # 开始登录
+    # 
     # reqData = req.Request(common.CAPTCHA_URL, headers=common.HEADER)
     # res = req.urlopen(reqData, context=context)
     # filePath = os.path.join('../codeAuto/test', '1234.jpg')
-    # # 以二进制+写文件 形式打开一个.jpg文件
     # with open(filePath, 'wb') as fp:
     #     fp.write(res.read())
     #
