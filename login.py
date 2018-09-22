@@ -56,16 +56,16 @@ def urllib_auth():
     res = req.urlopen(reqData)
     print(res.read().decode('utf8'))
 
-    # 
+    #
     # reqData = req.Request(common.CAPTCHA_URL, headers=common.HEADER)
     # res = req.urlopen(reqData, context=context)
     # filePath = os.path.join('../codeAuto/test', '1234.jpg')
     # with open(filePath, 'wb') as fp:
     #     fp.write(res.read())
     #
-    # # captchaData = ''.join(pc.captcha_data())
+    # captchaData = ''.join(pc.captcha_data())
     # common.HEADER['Content-Type'] = 'application/x-www-form-urlencoded'
-    # loginData = urllib.urlencode({'username': common.USER_NAME, 'password': common.USER_PASS, 'captcha': 123})
+    # loginData = urllib.urlencode({'username': common.USER_NAME, 'password': common.USER_PASS, 'captcha': captchaData})
     # loginData = loginData.encode('utf8')
     # reqData = req.Request(common.AUTH_URL, loginData, common.HEADER)
     # res = req.urlopen(reqData, context=context)
