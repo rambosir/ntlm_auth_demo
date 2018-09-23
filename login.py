@@ -31,7 +31,7 @@ def requests_auth():
 
 def urllib_auth():
     p = req.HTTPPasswordMgrWithDefaultRealm()
-    p.add_password(None, uri=common.AUTH_URL, user=(common.INDEX_URL + '\\' + common.USER_NAME),
+    p.add_password(None, uri=common.INDEX_URL, user=(common.INDEX_URL + '\\' + common.USER_NAME),
                    passwd=common.USER_PASS)
     handler = HTTPNtlmAuthHandler.HTTPNtlmAuthHandler(p)
     opener = req.build_opener(handler)
@@ -46,7 +46,6 @@ def urllib_auth():
 
     # task url
     common.HEADER['Cookie'] = apCookie
-    common.HEADER['Referer'] = 'https://oax.hsfinance.cn'
     reqData = req.Request(common.TASK_URL, headers=common.HEADER)
     res = req.urlopen(reqData)
     pCookie = res.info().get('Set-Cookie')
